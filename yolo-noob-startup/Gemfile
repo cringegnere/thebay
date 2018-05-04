@@ -1,0 +1,105 @@
+source 'https://rubygems.org'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+#
+# Main gems
+#
+gem 'awesome_print', '~> 1.7.0'
+gem 'config', '~> 1.4.0'
+gem 'date_validator', '~> 0.9.0'
+gem 'high_voltage', '~> 3.0.0'
+gem 'httparty', '~> 0.14.0'
+gem 'meta-tags', '~> 2.4.0'
+gem 'omniauth-linkedin', '~> 0.2.0'
+gem 'pg', '~> 0.19.0'
+gem 'rails', '~> 5.0.1'
+gem 'rails_semantic_logger', '~> 4.0.0'
+gem 'savon', '~> 2.0.2'
+gem 'sentry-raven', '~> 2.4.0'
+gem 'showcase', '~> 0.2.5'
+gem 'sidekiq-cron', '~> 0.4.5'
+gem 'simple_form', '~> 3.4.0'
+gem 'solidus', github: 'solidusio/solidus'
+gem 'virtus', '~> 1.0.5'
+
+#
+# Webservers
+#
+gem 'aws-healthcheck', '~> 1.0.1'
+gem 'puma', '~> 3.8.2'
+gem 'rubyzip', '>= 1.0.0'
+
+#
+# Assets
+#
+gem 'coffee-rails', '~> 4.2.1'
+gem 'fog-aws', '~> 1.2.0'
+gem 'jquery-rails', '~> 4.2.2'
+gem 'sass-rails', '~> 5.0.6'
+gem 'uglifier', '~> 3.0.4'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
+#
+# Various tools
+#
+
+gem 'fixy', '~> 0.0.8'
+gem 'geocoder', '~> 1.4.7'
+gem 'seedbank', '~> 0.4.0'
+gem 'silencer', '~> 1.0.1'
+
+#
+# Solidus extensions
+#
+gem 'solidus_auth_devise', '~> 1.6.2'
+gem 'solidus_braintree', '~> 1.1.0'
+gem 'solidus_editor', github: 'solidusio-contrib/solidus_editor'
+gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n'
+gem 'solidus_sitemap', github: 'solidusio-contrib/solidus_sitemap', branch: 'master'
+gem 'solidus_social', github: 'solidusio-contrib/solidus_social'
+gem 'tinymce-rails-langs'
+
+#
+# Api
+#
+gem 'rswag-api', '~> 1.5.2'
+gem 'rswag-ui', '~> 1.5.2'
+
+group :development do
+  gem 'web-console', '~> 3.4.0'
+end
+
+group :development, :test do
+  gem 'dev_tools', github: 'nebulab/dev_tools'
+  gem 'listen', '~> 3.0.5'
+  gem 'rspec-rails', '~> 3.5.2'
+  gem 'rswag-specs', '~> 1.5.2'
+  # Remove spring, it give us too many problems
+  # gem 'spring', '~> 2.0.1'
+  # gem 'spring-watcher-listen', '~> 2.0.1'
+end
+
+group :test do
+  gem 'capybara', '~> 2.14.4'
+  gem 'chromedriver-helper', '~> 1.1.0'
+  gem 'database_cleaner', '~> 1.5.3'
+  gem 'factory_girl', '~> 4.8.0'
+  gem 'rails-controller-testing', '~> 1.0.1'
+  gem 'selenium-webdriver', '~> 3.1.0'
+  gem 'shoulda-matchers', '~> 3.1.1'
+  gem 'site_prism', '~> 2.9'
+  gem 'timecop', '~> 0.8.1'
+  gem 'vcr', '~> 3.0.3'
+  gem 'webmock', '~> 2.3.2'
+end
+
+group :analyzers do
+  gem 'brakeman', '~> 3.4.1'
+  gem 'rubocop', '~> 0.46.0'
+  gem 'simplecov', '~> 0.12.0'
+end
